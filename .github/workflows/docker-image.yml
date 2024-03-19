@@ -26,131 +26,131 @@ jobs:
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/abuse-ssl && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/abuse-ssl-opencti  --push
+        cd external-import/abuse-ssl && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/abuse-ssl-opencti . --push
 
     - name: Build and Push Docker Image for abuseipdb-ipblacklist
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/abuseipdb-ipblacklist && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/abuseipdb-ipblacklist-opencti  --push
+        cd external-import/abuseipdb-ipblacklist && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/abuseipdb-ipblacklist-opencti . --push
 
     - name: Build and Push Docker Image for alienvault
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/alienvault && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/alienvault-opencti  --push
+        cd external-import/alienvault && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/alienvault-opencti . --push
 
     - name: Build and Push Docker Image for anyrun-feed
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/anyrun-feed && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/anyrun-feed-opencti  --push
+        cd external-import/anyrun-feed && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/anyrun-feed-opencti . --push
 
     - name: Build and Push Docker Image for cisa-known-exploited-vulnerabilities
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/cisa-known-exploited-vulnerabilities && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/cisa-known-exploited-vulnerabilities-opencti  --push
+        cd external-import/cisa-known-exploited-vulnerabilities && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/cisa-known-exploited-vulnerabilities-opencti . --push
 
     - name: Build and Push Docker Image for cpe
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/cpe && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/cpe-opencti  --push
+        cd external-import/cpe && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/cpe-opencti . --push
 
     - name: Build and Push Docker Image for abuse crtsh
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/crtsh && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/crtsh-opencti  --push
+        cd external-import/crtsh && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/crtsh-opencti . --push
 
     - name: Build and Push Docker Image for cve
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/cve && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/cve-opencti  --push
+        cd external-import/cve && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/cve-opencti . --push
 
     - name: Build and Push Docker Image for disarm-framework
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/disarm-framework && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/disarm-framework-opencti  --push
+        cd external-import/disarm-framework && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/disarm-framework-opencti . --push
 
     - name: Build and Push Docker Image for greynoise-feed
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/greynoise-feed && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/greynoise-feed-opencti  --push
+        cd external-import/greynoise-feed && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/greynoise-feed-opencti . --push
 
     - name: Build and Push Docker Image for maltiverse
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/maltiverse && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/maltiverse-opencti  --push
+        cd external-import/maltiverse && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/maltiverse-opencti . --push
 
     - name: Build and Push Docker Image for malwarebazaar-recent-additions
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/malwarebazaar-recent-additions && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/malwarebazaar-recent-additions-opencti  --push
+        cd external-import/malwarebazaar-recent-additions && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/malwarebazaar-recent-additions-opencti . --push
 
     - name: Build and Push Docker Image for eset
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/eset && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/eset-opencti  --push
+        cd external-import/eset && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/eset-opencti . --push
     - name: Build and Push Docker Image for mitre-atlas
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/mitre-atlas && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/mitre-atlas-opencti  --push
+        cd external-import/mitre-atlas && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/mitre-atlas-opencti . --push
 
     - name: Build and Push Docker Image for mitre
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/mitre && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/mitre-opencti  --push
+        cd external-import/mitre && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/mitre-opencti . --push
 
     - name: Build and Push Docker Image for tweetfeed
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/tweetfeed && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/tweetfeed-opencti  --push
+        cd external-import/tweetfeed && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/tweetfeed-opencti . --push
 
     - name: Build and Push Docker Image for urlhaus-recent-payloads
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/urlhaus-recent-payloads && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/urlhaus-recent-payloads-opencti  --push
+        cd external-import/urlhaus-recent-payloads && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/urlhaus-recent-payloads-opencti . --push
     - name: Build and Push Docker Image for urlscan
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/urlscan && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/urlscan-opencti  --push
+        cd external-import/urlscan && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/urlscan-opencti . --push
 
     - name: Build and Push Docker Image for export-file-stix
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-export-file/export-file-stix && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/export-file-stix-opencti  --push
+        cd internal-export-file/export-file-stix && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/export-file-stix-opencti . --push
     - name: Build and Push Docker Image for export-file-csv
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-export-file/export-file-csv && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/export-file-csv-opencti  --push
+        cd internal-export-file/export-file-csv && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/export-file-csv-opencti . --push
     - name: Build and Push Docker Image for export-file-txt
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-export-file/export-file-txt && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/export-file-txt-opencti  --push
+        cd internal-export-file/export-file-txt && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/export-file-txt-opencti . --push
     - name: Build and Push Docker Image for internal-import-file import-document
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-import-file/import-document && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/import-document-opencti  --push
+        cd internal-import-file/import-document && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/import-document-opencti . --push
 
     - name: Build and Push Docker Image for import-file-stix
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-import-file/import-file-stix && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/import-file-stix-opencti  --push
+        cd internal-import-file/import-file-stix && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/import-file-stix-opencti . --push
