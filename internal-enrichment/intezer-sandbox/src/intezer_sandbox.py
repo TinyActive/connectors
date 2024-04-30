@@ -162,6 +162,8 @@ class IntezerSandboxConnector:
             )
 
     def _process_message(self, data: Dict):
+        if "opencti_entity_id" not in data:
+            raise ValueError("Key 'opencti_entity_id' not found in data.")
         observable = data["opencti_entity_id"]
 
         # Extract TLP
