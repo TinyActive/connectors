@@ -16,7 +16,14 @@ from datetime import datetime
 
 import yaml
 from pycti import OpenCTIConnectorHelper, get_config_variable
-from rflib import APP_VERSION, RFClient, RiskList, StixNote, ThreatMap
+from rflib import (
+    APP_VERSION,
+    RecordedFutureAlertConnector,
+    RFClient,
+    RiskList,
+    StixNote,
+    ThreatMap,
+)
 
 
 class RFNotes:
@@ -40,16 +47,16 @@ class RFNotes:
             "RECORDED_FUTURE_INITIAL_LOOKBACK",
             ["rf", "initial_lookback"],
             config,
-            True,
+            isNumber=True,
         )
         self.rf_interval = get_config_variable(
-            "RECORDED_FUTURE_INTERVAL", ["rf", "interval"], config, True
+            "RECORDED_FUTURE_INTERVAL", ["rf", "interval"], config, isNumber=True
         )
         self.rf_risk_list_interval = get_config_variable(
             "RECORDED_FUTURE_RISK_LIST_INTERVAL",
             ["rf", "risk_list_interval"],
             config,
-            True,
+            isNumber=True,
         )
         self.tlp = get_config_variable(
             "RECORDED_FUTURE_TLP", ["rf", "TLP"], config
@@ -126,6 +133,10 @@ class RFNotes:
             )
         else:
             self.risklist_related_entities = risklist_related_entities_list.split(",")
+
+        self.rf_alert_enable = get_config_variable(
+            "ALERT_ENABLE", ["alert", "enable"], config
+        )
 
     def get_interval(self):
         """Converts interval hours to seconds"""
@@ -223,6 +234,10 @@ if __name__ == "__main__":
     try:
         RF = RFNotes()
 
+        # Start RF Alert Connector
+        if RF.rf_alert_enable:
+            RfCon = RecordedFutureAlertConnector(RF.helper)
+            RfCon.run()
         # Pull RF risk lists
         if RF.rf_pull_risk_list:
             RiskList = RiskList(

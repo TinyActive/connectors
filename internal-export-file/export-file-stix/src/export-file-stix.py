@@ -22,7 +22,8 @@ class ExportFileStix:
         file_name = data["file_name"]
         export_scope = data["export_scope"]  # query or selection or single
         export_type = data["export_type"]  # Simple or Full
-        max_marking = data["max_marking"]
+        max_marking = data["content_max_markings"][0]  # remove index on in chunk #2
+        file_markings = data["file_markings"]
 
         entity_id = data.get("entity_id")
         entity_type = data["entity_type"]
@@ -49,7 +50,7 @@ class ExportFileStix:
                 },
             )
             self.helper.api.stix_domain_object.push_entity_export(
-                entity_id, file_name, json_bundle
+                entity_id, file_name, json_bundle, file_markings
             )
             self.helper.connector_logger.info(
                 "Export done",
@@ -68,9 +69,36 @@ class ExportFileStix:
                 entities_list = []
 
                 for selected_id in selected_ids:
-                    entity_data = self.helper.api_impersonate.stix_domain_object.read(
-                        id=selected_id, withFiles=True
+                    custom_attributes = """
+                        ... on StixCoreObject {
+                          id
+                          entity_type
+                        }
+                        ... on StixCoreRelationship {
+                          id
+                          entity_type
+                        }
+                        ... on StixSightingRelationship {
+                          id
+                          entity_type
+                        }
+                    """
+                    stix_object_result = self.helper.api_impersonate.opencti_stix_object_or_stix_relationship.read(
+                        id=selected_id, customAttributes=custom_attributes
                     )
+                    if stix_object_result is not None:
+                        entity_type = stix_object_result["entity_type"]
+                        # Reader
+                        do_read = self.helper.api.stix2.get_reader(entity_type)
+                        entity_data = do_read(id=selected_id)
+
+                    else:
+                        entity_data = (
+                            self.helper.api_impersonate.stix_domain_object.read(
+                                id=selected_id, withFiles=True
+                            )
+                        )
+
                     if entity_data is None:
                         entity_data = (
                             self.helper.api_impersonate.stix_cyber_observable.read(
@@ -127,15 +155,30 @@ class ExportFileStix:
             )
             if entity_type == "Stix-Cyber-Observable":
                 self.helper.api.stix_cyber_observable.push_list_export(
-                    entity_id, entity_type, file_name, json_bundle, list_filters
+                    entity_id,
+                    entity_type,
+                    file_name,
+                    file_markings,
+                    json_bundle,
+                    list_filters,
                 )
             elif entity_type == "Stix-Core-Object":
                 self.helper.api.stix_core_object.push_list_export(
-                    entity_id, entity_type, file_name, json_bundle, list_filters
+                    entity_id,
+                    entity_type,
+                    file_name,
+                    file_markings,
+                    json_bundle,
+                    list_filters,
                 )
             else:
                 self.helper.api.stix_domain_object.push_list_export(
-                    entity_id, entity_type, file_name, json_bundle, list_filters
+                    entity_id,
+                    entity_type,
+                    file_name,
+                    file_markings,
+                    json_bundle,
+                    list_filters,
                 )
             self.helper.connector_logger.info(
                 "Export done",
