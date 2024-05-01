@@ -239,3 +239,8 @@ jobs:
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
         cd internal-enrichment/unpac-me && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/internal-unpac-me:30-04-2024 . --push
+    - name: Build and Push Docker Image for external-import/misp
+      run: |
+        docker buildx create --use
+        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+        cd intexternal-import/misp && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/external-import-misp:30-04-2024 . --push
