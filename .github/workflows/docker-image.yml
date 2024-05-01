@@ -224,3 +224,8 @@ jobs:
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
         cd internal-enrichment/dnstwist && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/dnstwist-dns:30-04-2024 . --push
+    - name: Build and Push Docker Image for internal-enrichment/yara
+      run: |
+        docker buildx create --use
+        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+        cd internal-enrichment/yara && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/internal-yara-dns:30-04-2024 . --push
