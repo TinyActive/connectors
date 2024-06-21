@@ -1,7 +1,7 @@
 version: '3'
 services:
   connector-hatching-triage-sandbox:
-    image: vouu/internal-unpac-me:30-04-2024
+    image: vouu/internal-unpac-me:21-06-2024
     environment:
       - OPENCTI_URL=${OPENCTI_URL}
       - OPENCTI_TOKEN=${OPENCTI_ADMIN_TOKEN}

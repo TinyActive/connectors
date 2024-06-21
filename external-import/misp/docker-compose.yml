@@ -1,7 +1,7 @@
 version: '3'
 services:
   connector-misp:
-    image: vouu/external-import-misp:30-04-2024
+    image: vouu/external-import-misp:21-06-2024
     environment:
       - OPENCTI_URL=http://localhost
       - OPENCTI_TOKEN=ChangeMe

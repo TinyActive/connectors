@@ -26,221 +26,226 @@ jobs:
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/abuse-ssl && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/abuse-ssl-opencti:30-04-2024 . --push
+        cd external-import/abuse-ssl && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/abuse-ssl-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for abuseipdb-ipblacklist
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/abuseipdb-ipblacklist && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/abuseipdb-ipblacklist-opencti:30-04-2024 . --push
+        cd external-import/abuseipdb-ipblacklist && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/abuseipdb-ipblacklist-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for alienvault
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/alienvault && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/alienvault-opencti:30-04-2024 . --push
+        cd external-import/alienvault && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/alienvault-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for anyrun-feed
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/anyrun-feed && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/anyrun-feed-opencti:30-04-2024 . --push
+        cd external-import/anyrun-feed && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/anyrun-feed-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for cisa-known-exploited-vulnerabilities
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/cisa-known-exploited-vulnerabilities && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/cisa-known-exploited-vulnerabilities-opencti:30-04-2024 . --push
+        cd external-import/cisa-known-exploited-vulnerabilities && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/cisa-known-exploited-vulnerabilities-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for cpe
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/cpe && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/cpe-opencti:30-04-2024 . --push
+        cd external-import/cpe && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/cpe-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for abuse crtsh
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/crtsh && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/crtsh-opencti:30-04-2024 . --push
+        cd external-import/crtsh && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/crtsh-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for cve
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/cve && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/cve-opencti:30-04-2024 . --push
+        cd external-import/cve && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/cve-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for disarm-framework
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/disarm-framework && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/disarm-framework-opencti:30-04-2024 . --push
+        cd external-import/disarm-framework && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/disarm-framework-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for greynoise-feed
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/greynoise-feed && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/greynoise-feed-opencti:30-04-2024 . --push
+        cd external-import/greynoise-feed && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/greynoise-feed-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for maltiverse
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/maltiverse && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/maltiverse-opencti:30-04-2024 . --push
+        cd external-import/maltiverse && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/maltiverse-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for malwarebazaar-recent-additions
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/malwarebazaar-recent-additions && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/malwarebazaar-recent-additions-opencti:30-04-2024 . --push
+        cd external-import/malwarebazaar-recent-additions && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/malwarebazaar-recent-additions-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for eset
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/eset && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/eset-opencti:30-04-2024 . --push
+        cd external-import/eset && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/eset-opencti:21-06-2024 . --push
     - name: Build and Push Docker Image for mitre-atlas
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/mitre-atlas && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/mitre-atlas-opencti:30-04-2024 . --push
+        cd external-import/mitre-atlas && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/mitre-atlas-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for mitre
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/mitre && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/mitre-opencti:30-04-2024 . --push
+        cd external-import/mitre && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/mitre-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for tweetfeed
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/tweetfeed && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/tweetfeed-opencti:30-04-2024 . --push
+        cd external-import/tweetfeed && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/tweetfeed-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for urlhaus-recent-payloads
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/urlhaus-recent-payloads && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/urlhaus-recent-payloads-opencti:30-04-2024 . --push
+        cd external-import/urlhaus-recent-payloads && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/urlhaus-recent-payloads-opencti:21-06-2024 . --push
     - name: Build and Push Docker Image for urlscan
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd external-import/urlscan && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/urlscan-opencti:30-04-2024 . --push
+        cd external-import/urlscan && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/urlscan-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for export-file-stix
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-export-file/export-file-stix && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/export-file-stix-opencti:30-04-2024 . --push
+        cd internal-export-file/export-file-stix && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/export-file-stix-opencti:21-06-2024 . --push
     - name: Build and Push Docker Image for export-file-csv
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-export-file/export-file-csv && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/export-file-csv-opencti:30-04-2024 . --push
+        cd internal-export-file/export-file-csv && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/export-file-csv-opencti:21-06-2024 . --push
     - name: Build and Push Docker Image for export-file-txt
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-export-file/export-file-txt && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/export-file-txt-opencti:30-04-2024 . --push
+        cd internal-export-file/export-file-txt && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/export-file-txt-opencti:21-06-2024 . --push
     - name: Build and Push Docker Image for internal-import-file import-document
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-import-file/import-document && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/import-document-opencti:30-04-2024 . --push
+        cd internal-import-file/import-document && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/import-document-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for import-file-stix
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-import-file/import-file-stix && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/import-file-stix-opencti:30-04-2024 . --push
+        cd internal-import-file/import-file-stix && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/import-file-stix-opencti:21-06-2024 . --push
 
     - name: Build and Push Docker Image for internal-enrichment crowdsec
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-enrichment/crowdsec && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/crowdsec:30-04-2024 . --push
+        cd internal-enrichment/crowdsec && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/crowdsec:21-06-2024 . --push
     - name: Build and Push Docker Image for internal-enrichment abuseipdb
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-enrichment/abuseipdb && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/abuseipdb-enrichment:30-04-2024 . --push
+        cd internal-enrichment/abuseipdb && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/abuseipdb-enrichment:21-06-2024 . --push
 
     - name: Build and Push Docker Image for internal-enrichment/attribution-tools
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-enrichment/attribution-tools && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/attribution-tools-enrichment:30-04-2024 . --push
+        cd internal-enrichment/attribution-tools && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/attribution-tools-enrichment:21-06-2024 . --push
     - name: Build and Push Docker Image for internal-enrichment/urlscan-enrichment
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-enrichment/urlscan-enrichment && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/urlscan-enrichment:30-04-2024 . --push
+        cd internal-enrichment/urlscan-enrichment && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/urlscan-enrichment:21-06-2024 . --push
 
     - name: Build and Push Docker Image for internal-enrichment/shodan
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-enrichment/shodan && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/shodan-enrichment:30-04-2024 . --push
+        cd internal-enrichment/shodan && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/shodan-enrichment:21-06-2024 . --push
     - name: Build and Push Docker Image for internal-enrichment/shodan-internetdb
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-enrichment/shodan-internetdb && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/shodan-internetdb-enrichment:30-04-2024 . --push
+        cd internal-enrichment/shodan-internetdb && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/shodan-internetdb-enrichment:21-06-2024 . --push
     - name: Build and Push Docker Image for internal-enrichment/ivre
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-enrichment/ivre && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/ivre-enrichment:30-04-2024 . --push
+        cd internal-enrichment/ivre && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/ivre-enrichment:21-06-2024 . --push
 
     - name: Build and Push Docker Image for internal-enrichment/ipqs
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-enrichment/ipqs && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/ipqs-enrichment:30-04-2024 . --push
+        cd internal-enrichment/ipqs && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/ipqs-enrichment:21-06-2024 . --push
 
     - name: Build and Push Docker Image for internal-enrichment/ipinfo
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-enrichment/ipinfo && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/ipinfo-enrichment:30-04-2024 . --push
+        cd internal-enrichment/ipinfo && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/ipinfo-enrichment:21-06-2024 . --push
     - name: Build and Push Docker Image for internal-enrichment/intezer-sandbox
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-enrichment/intezer-sandbox && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/intezer-enrichment:30-04-2024 . --push
+        cd internal-enrichment/intezer-sandbox && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/intezer-enrichment:21-06-2024 . --push
     - name: Build and Push Docker Image for internal-enrichment/hybrid-analysis-sandbox
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-enrichment/hybrid-analysis-sandbox && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/hybrid-analysis-sandbox:30-04-2024 . --push
+        cd internal-enrichment/hybrid-analysis-sandbox && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/hybrid-analysis-sandbox:21-06-2024 . --push
     - name: Build and Push Docker Image for internal-enrichment/google-dns
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-enrichment/google-dns && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/google-dns:30-04-2024 . --push
+        cd internal-enrichment/google-dns && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/google-dns:21-06-2024 . --push
     - name: Build and Push Docker Image for internal-enrichment/dnstwist
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-enrichment/dnstwist && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/dnstwist-dns:30-04-2024 . --push
+        cd internal-enrichment/dnstwist && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/dnstwist-dns:21-06-2024 . --push
     - name: Build and Push Docker Image for internal-enrichment/yara
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-enrichment/yara && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/internal-yara-dns:30-04-2024 . --push
+        cd internal-enrichment/yara && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/internal-yara-dns:21-06-2024 . --push
     - name: Build and Push Docker Image for internal-enrichment/hostio
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-enrichment/hostio && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/internal-hostio:30-04-2024 . --push
+        cd internal-enrichment/hostio && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/internal-hostio:21-06-2024 . --push
     - name: Build and Push Docker Image for internal-enrichment/unpac-me
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd internal-enrichment/unpac-me && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/internal-unpac-me:30-04-2024 . --push
+        cd internal-enrichment/unpac-me && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/internal-unpac-me:21-06-2024 . --push
     - name: Build and Push Docker Image for external-import/misp
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        cd intexternal-import/misp && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/external-import-misp:30-04-2024 . --push
+        cd intexternal-import/misp && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/external-import-misp:21-06-2024 . --push
+    - name: Build and Push Docker Image for external-import/misp
+      run: |
+        docker buildx create --use
+        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+        cd internal-import-file/import-document && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/connector-import-document:21-06-2024 . --push
