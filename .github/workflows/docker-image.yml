@@ -33,37 +33,40 @@ jobs:
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
         cd external-import/abuseipdb-ipblacklist && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/abuseipdb-ipblacklist-opencti:21-06-2024 . --push
+        docker system prune -af
 
     - name: Build and Push Docker Image for alienvault
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
         cd external-import/alienvault && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/alienvault-opencti:21-06-2024 . --push
+        docker system prune -af
 
     - name: Build and Push Docker Image for anyrun-feed
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
         cd external-import/anyrun-feed && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/anyrun-feed-opencti:21-06-2024 . --push
+        docker system prune -af
 
     - name: Build and Push Docker Image for cisa-known-exploited-vulnerabilities
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
         cd external-import/cisa-known-exploited-vulnerabilities && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/cisa-known-exploited-vulnerabilities-opencti:21-06-2024 . --push
-
+        docker system prune -af
     - name: Build and Push Docker Image for cpe
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
         cd external-import/cpe && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/cpe-opencti:21-06-2024 . --push
-
+        docker system prune -af
     - name: Build and Push Docker Image for abuse crtsh
       run: |
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
         cd external-import/crtsh && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/crtsh-opencti:21-06-2024 . --push
-
+        docker system prune -af
     - name: Build and Push Docker Image for cve
       run: |
         docker buildx create --use
@@ -214,6 +217,7 @@ jobs:
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
         cd internal-enrichment/hybrid-analysis-sandbox && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/hybrid-analysis-sandbox:21-06-2024 . --push
+        docker system prune -af
     - name: Build and Push Docker Image for internal-enrichment/google-dns
       run: |
         docker buildx create --use
@@ -229,6 +233,7 @@ jobs:
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
         cd internal-enrichment/yara && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/internal-yara-dns:21-06-2024 . --push
+        docker system prune -af
     - name: Build and Push Docker Image for internal-enrichment/hostio
       run: |
         docker buildx create --use
@@ -249,3 +254,4 @@ jobs:
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
         cd internal-import-file/import-document && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/connector-import-document:21-06-2024 . --push
+        docker system prune -af
