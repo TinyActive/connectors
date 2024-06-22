@@ -27,7 +27,12 @@ jobs:
         docker buildx create --use
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
         cd external-import/abuse-ssl && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/abuse-ssl-opencti:21-06-2024 . --push
-
+    - name: Build and Push Docker Image for connector-import-document
+      run: |
+        docker buildx create --use
+        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+        cd internal-import-file/import-document && docker buildx build --platform linux/amd64,linux/arm64 -t vouu/connector-import-document:21-06-2024 . --push
+        docker system prune -af
     - name: Build and Push Docker Image for abuseipdb-ipblacklist
       run: |
         docker buildx create --use
